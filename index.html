@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f6fb" />
+  <meta name="description" content="Try a transparent, human-reviewed inbox triage workflow for support and sales teams." />
+  <title>InboxPilot — Braxly</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="logo" href="https://github.com/braxlyco"><span class="logo-icon">B<span>.</span></span><span>inbox<span class="logo-em">pilot</span><small>by Braxly</small></span></a>
+      <div class="nav-label">WORKSPACE</div>
+      <nav id="filters" aria-label="Inbox filters"></nav>
+      <div class="sidebar-bottom"><div class="demo-tag"><span>●</span> LOCAL DEMO MODE</div><p>Classification runs in this browser. No AI model is connected and no email is sent.</p><a href="https://github.com/braxlyco/inboxpilot" target="_blank" rel="noopener noreferrer">Explore the source ↗</a></div>
+    </aside>
+
+    <main>
+      <header class="topbar"><div class="crumb">Workspace <span>/</span> Inbox</div><div class="top-actions"><span class="online-dot"></span><span>Demo workspace</span><a href="mailto:contactbraxly@gmail.com?subject=Inbox%20automation%20project">Build my workflow ↗</a></div></header>
+      <div class="content">
+        <div class="hero-row"><div><div class="eyebrow">BRAXLY / AUTOMATION LAB 002</div><h1>One inbox.<br /><span>Clear next steps.</span></h1><p>See how a transparent triage workflow classifies requests, routes owners, drafts replies, and keeps a person in control.</p></div><div class="hero-art" aria-hidden="true"><div class="art-back"></div><div class="art-card"><div class="art-line short"></div><div class="art-line"></div><div class="art-line medium"></div><div class="art-stamp">✓</div></div><div class="art-bubble">↗</div></div></div>
+        <div class="notice"><span class="notice-icon">i</span><span><strong>How this demo works:</strong> visible keyword rules make recommendations; a teammate reviews and approves each draft. This is not a live AI model or a connected email inbox.</span></div>
+        <section class="stats" aria-label="Inbox summary"><div><span>ALL MESSAGES</span><strong id="stat-total">0</strong><small>Sample + your local cases</small></div><div><span>NEEDS REVIEW</span><strong id="stat-pending">0</strong><small>Waiting for a person</small></div><div><span>CRITICAL</span><strong id="stat-critical">0</strong><small>Active incidents</small></div><div><span>REVIEWED</span><strong id="stat-reviewed">0</strong><small>Drafts approved locally</small></div></section>
+        <section class="inbox-section"><div class="section-heading"><div><span>THE WORK QUEUE</span><h2>Incoming requests</h2></div><div class="heading-actions"><button id="export-button" class="outline-button">Export audit ↓</button><button id="new-button" class="primary-button">+ New message</button></div></div>
+          <div class="workspace"><div class="list-pane"><div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search the inbox" aria-label="Search messages" /></div><div id="message-list" class="message-list"></div></div><div id="detail-pane" class="detail-pane" aria-live="polite"></div></div>
+        </section>
+        <footer><span>INBOXPILOT <b>BY BRAXLY</b></span><div><button id="reset-button">Reset demo</button><a href="mailto:contactbraxly@gmail.com?subject=Inbox%20automation%20project">Discuss your automation ↗</a></div></footer>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="new-dialog"><form id="new-form"><div class="dialog-head"><div><span>NEW CASE</span><h2>Add a message</h2></div><button type="button" id="close-dialog" aria-label="Close">×</button></div><p>Try your own request. It stays in this browser.</p><label>Sender name<input name="from" required maxlength="80" placeholder="Alex Morgan" /></label><label>Company<input name="company" maxlength="80" placeholder="Acme Co" /></label><label>Subject<input name="subject" required maxlength="120" placeholder="What is the request about?" /></label><label>Message<textarea name="body" required maxlength="2000" rows="5" placeholder="Describe the request..."></textarea></label><button type="submit" class="primary-button">Add to inbox</button></form></dialog>
+</body>
+</html>
